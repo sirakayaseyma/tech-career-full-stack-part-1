@@ -1,7 +1,8 @@
 @import './sass/base/reset';
-
-@import './sass/variable';
-
-@import './sass/header';
-@import './sass/content';
-@import './sass/footer';
+@import './sass/base/core';
+@import './sass/sass-utils/variable';
+@import './sass/helpers/mixins';
+@import './sass/layout/navbar';
+@import './sass/layout/header';
+@import './sass/layout/content';
+@import './sass/layout/footer';
