@@ -1,0 +1,28 @@
+css selectors
+https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048
+
+
+Adem İlter Box Model Video
+https://www.youtube.com/watch?v=dTUtsy54eP0
+
+
+flex kaynaklar
+https://www.w3schools.com/css/css3_flexbox.asp
+
+
+css ölçü birimleri
+https://medium.com/baakademi/cssde-%C3%B6l%C3%A7%C3%BC-ve-uzunluk-birimleri-6563c2ee9853
+
+
+sass döküman
+https://sass-lang.com/documentation/
+https://gist.github.com/AdamMarsden/7b85e8d5bdb5bef969a0
+https://itnext.io/writing-media-queries-with-sass-mixins-3ea591ea3ea4
+
+
+Okunacaklar
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+https://www.w3schools.com/css/css3_flexbox.asp
+
+
+https://flexboxfroggy.com/
