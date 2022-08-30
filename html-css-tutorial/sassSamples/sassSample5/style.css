@@ -1,0 +1,13 @@
+p {
+  font-size: 1rem;
+}
+@media (max-width: 599px) {
+  p {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 900px) {
+  p {
+    font-size: 2rem;
+  }
+}/*# sourceMappingURL=style.css.map */

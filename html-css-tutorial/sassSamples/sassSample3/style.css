@@ -1,0 +1,17 @@
+.button-1 {
+  width: 100px;
+  height: 100px;
+  background-color: tomato;
+  border-width: 2px;
+  font-size: 15px;
+  border-color: yellow;
+}
+
+.button-2 {
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+  border-width: 2px;
+  font-size: 15px;
+  border-color: yellow;
+}/*# sourceMappingURL=style.css.map */

@@ -3,6 +3,28 @@ header {
   justify-content: center;
 }
 
+.container p {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.container div {
+  width: 200px;
+  height: 200px;
+  border: solid;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.container ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 footer {
   font-size: 45px;
 }/*# sourceMappingURL=style.css.map */
