@@ -4,13 +4,13 @@
     width: 90%;
     box-sizing: border-box;
    font-size: 1.25rem;
-   display: block;
+
    text-align: center;
    color: white;
-   display: block;
+
    justify-content: center !important;
    flex-wrap: wrap;
-   
+   vertical-align: middle;
 }
 
 .yazi{
@@ -18,28 +18,62 @@
 
     padding-left: 40%;
     padding-right: 40%;
-
-    h2{
-        font-size: 50px;
-    }
-
-    h3{
-        font-size: 30px;
-    }
-    h6{
-        font-size: 20px;
-    }
 }
 
-.line:not([size]){
-    height: 1px;
-    margin-top: 1.5rem  !important;
-    margin-bottom: 1.5rem !important;
-    background-color: #dee2e6;
-    opacity: 1;
-    color: inherit;
-    unicode-bidi: isolate;
-    margin-block-start: 0.5rem;
-    
+.ortala{
+    text-align: center;
+}
+h2{
+    font-size: 40px;
+  line-height: 1.2;
+  box-sizing: border-box;
+  text-align: justify;
+
+}
+
+h3{
+    font-size: 25px;
+    line-height: 1.2;
+    text-align: justify;
+  
+}
+h6{
+    font-size: 20px;
+    opacity: 0.4;
+    text-align: justify;
+
+}
+// .line:not([size]){
+//     height: 1px;
+//     margin-top: 1.5rem  !important;
+//     margin-bottom: 1.5rem !important;
+//     background-color: #dee2e6;
+//     opacity: 1;
+//     color: inherit;
+//     unicode-bidi: isolate;
+//     margin-block-start: 0.5rem;
+//     width: 50%;
+
+// }
+
+.button{
+    position: absolute;
+    right: 180px;
+    letter-spacing: 0.0625em;
+    text-transform: uppercase !important;
+    color: #fff;
+    background-color: #0085A1;
+    border-color: #0085A1 ;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.5;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 1rem 1.75rem;
+    font-size: 0.825rem;
+    border-radius: 0;
 
 }
