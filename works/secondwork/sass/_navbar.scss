@@ -1,0 +1,39 @@
+nav{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  width: 100%;
+  box-sizing: border-box;
+
+  .logo a{
+      color:$menuColor;
+      font-weight: 800;
+      color:$menuColor;
+      z-index: 1;
+  }
+  .logo a:hover{
+      color:$menuHoverColor
+  }
+  ul{
+      display: flex;
+  }
+  li{
+      margin-left: 20px;
+      a{
+          color:$menuColor;
+          z-index: 1;
+      }
+      a:hover{
+          color:$menuHoverColor
+      }
+  }
+}
+
+
+

@@ -1,0 +1,45 @@
+.container{
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    width: 90%;
+    box-sizing: border-box;
+   font-size: 1.25rem;
+   display: block;
+   text-align: center;
+   color: white;
+   display: block;
+   justify-content: center !important;
+   flex-wrap: wrap;
+   
+}
+
+.yazi{
+    padding-top: 550px;
+
+    padding-left: 40%;
+    padding-right: 40%;
+
+    h2{
+        font-size: 50px;
+    }
+
+    h3{
+        font-size: 30px;
+    }
+    h6{
+        font-size: 20px;
+    }
+}
+
+.line:not([size]){
+    height: 1px;
+    margin-top: 1.5rem  !important;
+    margin-bottom: 1.5rem !important;
+    background-color: #dee2e6;
+    opacity: 1;
+    color: inherit;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5rem;
+    
+
+}
