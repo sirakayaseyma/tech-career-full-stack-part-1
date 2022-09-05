@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // string metodlar string değerler üzerine yapışık metodlar.
+
+        var name = "Şeyma";
+
+        // Şeyma ismini ŞEYMA şeklinde göster
+
+        console.log('UPPER CASE:' , name.toUpperCase());
+
+
+        //Şeyma ismini şeyma şekinde yani tamamen küçük harf göster.
+
+        console.log('LOWER CASE', name.toLowerCase());
+
+        //name değişkeninin uzunluğunu bana ver
+
+        console.log('Length:' , name.length);
+
+
+        //Slice belirlediğimiz indexten gideceğimiz indexe kadar parça verir.
+
+        var result = name.slice(2,4);
+        console.log('SLICE:' , result);
+
+        var result2 = name.replace("a", "e");
+        console.log("Replace", result2);
+
+
+        var phoneNumber ="905437735555";
+        //yukarıdaki numaradan +90 kısmını çıkar.
+
+        var phoneResult = phoneNumber.slice(2);
+        console.log('Phoneresult' , phoneResult);
+
+
+        var surname = "Gündoğdu";
+
+        var fullName = name.concat(" " , surname);
+        console.log("Fullname:" , fullName);
+
+
+        console.log("TRIM", name.trim());
+
+
+
+        //Indexi 3 olan harfi ekrana yazdir
+        console.log('Index-3:' , name[3]);
+
+
+
+    </script>
+</body>
+</html>

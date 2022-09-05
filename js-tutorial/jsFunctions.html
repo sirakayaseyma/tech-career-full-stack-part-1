@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // functionlar dışarıdan değer alıp değer döndürebilir veya döndürmeyebilir.
+        function hello(){
+             console.log('hello js functions!');
+
+        }
+
+        function calcTaxPrice(price,tax = 4){
+            var result = price* (tax / 100);
+            return result;
+        }
+
+        var data = calcTaxPrice(500);
+    </script>
+
+</body>
+</html>
