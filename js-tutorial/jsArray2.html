@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./productsData.js"></script>
+</head>
+<body>
+  
+</body>
+
+<script>
+
+    console.log('Products Length: ', products.length);
+
+    //for, foreach, map
+
+    //Ürün adlarını console a yazdır.
+    products.forEach(function(item, index) {
+
+        //console.log('Name: ', item.name + " index: " + index );
+
+    })
+
+
+    //UnitPrice ları ekrana yazdır
+    products.map(function(item,index){
+        //console.log('Price: ' + item.unitPrice);
+    });
+
+
+    //UnitPrice 40 dan büyük olan productları console yazdır.
+
+    //filter bir array metotdur. İçerisindeki sorgu sonucuna göre dışarıya bir dizi döner.
+    let filteredProducts = products.filter(item => item.unitPrice > 40);
+    //console.log('filteredProducts ', filteredProducts);
+
+
+    //UnitPrice 50 dan küçük-eşit VE categoryId si 2 olan ürünleri bana ver
+    let filteredProducts2 = products.filter(item => item.unitPrice <= 50 && item.categoryId == 2)
+    //console.log('filteredProducts: ', filteredProducts2);
+
+
+    //Name alanı S ile başlayan ürünleri ekrana yaz. Küçük - büyük harf kontolü önemli
+    let filteredProducts3 = products.filter(item => item.name.toLowerCase().startsWith('s'));
+    //console.log('filteredProducts3 ', filteredProducts3);
+
+
+    //Name içerisinde x harfi geçenleri console a yazdır.
+    let filteredProducts4 = products.filter(item => item.name.toLowerCase().includes('x'));
+    //console.log('filteredProducts4', filteredProducts4);
+
+
+
+    //Find metodu içerisine aldığı sorguya göre BİR ADET obje return eder.
+    //ID si 3 olan ürünü bana ver.
+    let findProduct = products.find(item => item.id == 3);
+    console.log('findProduct', findProduct);
+
+
+</script>
+</html>

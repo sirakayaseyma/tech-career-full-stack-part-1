@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var cities = ['İzmir', 'İstanbul', 'Ankara'];
+
+        //Mevcut diziye yeni bir eleman ekliyorum.
+
+        cities.push('Diyarbakır');
+
+        console.log('Cities', cities);
+
+        // Dizideki ilk eleman
+        console.log('First', cities[0]);
+
+        //spread keyword
+        var newCities = [...cities, 'Aydın']
+
+        console.log("New Cities", newCities);
+
+
+        var newCities2 = ['Van', ...cities, 'Aydın'];
+        console.log("NewCities2 : ", newCities2);
+
+
+        const fruits = ['Banana' , 'Orange' , 'Apple' , 'Mango' ];
+
+        fruits.splice(0,1);
+        console.log('Splice' , fruits);
+
+        const names = ['Çağatay', 'Mustafa', 'Şeyma', 'Harun', 'Elif'];
+
+        console.log("SLice:", names.slice(1,3));
+
+
+
+
+    </script>
+</body>
+
+</html>
