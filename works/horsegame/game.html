@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: green;
+        }
+
+        img {
+            width: 300px;
+            height: 120px;
+            position: relative;
+            left: 10;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <img id="at1" src="https://vetrehberi.com/wp-content/uploads/2021/05/arap-at-irki-ve-ozellikleri.jpg" alt="">
+    </div>
+
+    <div>
+        <img id="at2"
+            src="https://www.clementoni.com/media/prod/dk/35071/fresian-black-horse-500-pcs-high-quality-collection_OTezdEc.jpg"
+            alt="">
+    </div>
+
+    <div>
+        <button onclick="start()">Start</button>
+    </div>
+
+
+</body>
+<script>
+
+    let left1 = 10;
+    let left2 = 10;
+
+    function start() {
+
+        var audio = new Audio('mario.mp3');
+        audio.play();
+        setInterval(() => {
+
+            //her 500 milisaniye ATA rastgele bir sayı atayalım
+            randomNumber1 = Math.floor(Math.random() * 200);
+            left1 = left1 + randomNumber1;
+
+            let at1 = document.getElementById('at1');
+            at1.style.left = left1 + "px";
+
+
+            randomNumber2 = Math.floor(Math.random() * 200);
+            left2 = left2 + randomNumber2;
+
+            let at2 = document.getElementById('at2');
+            at2.style.left = left2 + "px";
+
+
+        }, 900);
+
+    }
+
+
+</script>
+
+</html>
