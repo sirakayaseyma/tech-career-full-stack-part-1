@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="button">
+
+    </div>
+    <button id="btn"> Click!</button>
+</body>
+
+<script>
+document.getElementById('btn').addEventListener('click', function() {
+
+    alert('Click Me!');
+})
+
+
+//bir for dögüsü ile 10 tana buton oluşsun ve div içine eklensin.
+//her butona fordaki index no verilsin hangi butona tıklarsam onun index numarası yazsın.
+for( let i = 0; i< 10; i++){
+    let btn = document.createElement('button');
+    btn.innerHTML = i;
+    btn.addEventListener('click' , function (e) {
+      //console.log('e', e.target.innerHTML);
+      console.log('this:' , this.innerHTML);
+        
+    })
+
+    document.getElementById('buttons').appendChild(bth);
+}
+</script>
+</html>

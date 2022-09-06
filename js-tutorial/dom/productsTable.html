@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../productsData.js"></script>
+    <style>
+        th {
+            cursor: pointer;
+        }
+        #page span{
+            cursor: pointer;
+            color: blue;
+            margin-left: 5px;
+            text-decoration:underline;
+        }
+    </style>
+</head>
+
+<body style="padding: 5%">
+    <h1 id="productsCount">Count: </h1>
+    <div style="margin-bottom: 30px">
+        <label>Name:</label>
+        <input type="text" id="name" />
+        <button id="search">Search</button>
+
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Unit Price</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <div id="page">
+        
+    </div>
+    <span id="pageNumber">Page Number: 1</span>
+
+    <button>Prev</button>
+    <button>Next</button>
+
+</body>
+<script>
+
+    //Ekrandaki table a tüm ürünleri yaz
+    let tBody = document.getElementsByTagName('tbody')[0];
+
+
+    function fillTable(productsData, page) {
+
+        var row = document.getElementsByTagName('tbody')[0];
+        row.innerHTML = "";
+
+        document.getElementById('productsCount').innerText = "Count: " + productsData.length;
+
+        productsData.slice((page-1) * 10,page*10).map((item, key) => {
+
+
+            let trElement = document.createElement('tr');
+
+            let tdId = document.createElement('td');
+            tdId.innerText = item.id;
+
+            let tdName = document.createElement('td');
+            tdName.innerText = item.name;
+
+            let tdUnitPrice = document.createElement('td');
+            tdUnitPrice.innerText = item.unitPrice;
+
+            trElement.appendChild(tdId);
+            trElement.appendChild(tdName);
+            trElement.appendChild(tdUnitPrice);
+
+            tBody.appendChild(trElement);
+
+        })
+        
+    }
+
+    function paginationGenerator(pageCount){
+
+        document.getElementById('page').innerHTML = "";
+
+        for(i = 1; i <= pageCount; i++){
+            
+            var spanElement = document.createElement('span');
+            spanElement.innerText = i;
+            document.getElementById('page').appendChild(spanElement);
+
+            spanElement.addEventListener('click', function(){
+
+                let pageNumber = Number(this.innerText);
+                fillTable(products, pageNumber);
+                document.getElementById('pageNumber').innerText ="Page Number: " + pageNumber;
+                //this.style.color = 'tomato';
+
+
+            })
+
+        }
+
+    }
+
+
+    fillTable(products,1);
+    var pageCount = Math.ceil(products.length / 10);
+    paginationGenerator(pageCount)
+
+    //UnitPrice olan kolonun başlığına tıkladığımda unit Price a göre sıralansın
+
+    let orderByUnitPrice = true;
+    //Unit Price kolonunun tıklamasını nasıl yakalarım?
+    document.querySelector('th:nth-child(3)').addEventListener("click", function () {
+
+        if (orderByUnitPrice) {
+
+            products.sort((a, b) => {
+                return a.unitPrice - b.unitPrice;
+            });
+
+            orderByUnitPrice = false;
+
+        }
+        else {
+            products.sort((a, b) => {
+                return b.unitPrice - a.unitPrice;
+            });
+
+            orderByUnitPrice = true;
+        }
+
+
+        fillTable(products)
+
+    })
+
+
+    document.getElementById('search').addEventListener('click', function () {
+
+        searchByName();
+    })
+
+    document.getElementById('name').addEventListener('keyup', function () {
+
+        //setTimeout ile beklettim
+        //setTimeout(() => {
+            searchByName();
+        //}, 500);
+    })
+
+
+    function searchByName() {
+        var searchValue = document.getElementById('name').value.trim().toLowerCase();
+
+        let filteredProducts = products.filter(item => item.name.toLowerCase().includes(searchValue));
+
+        fillTable(filteredProducts,1);
+    }
+
+</script>
+
+</html>

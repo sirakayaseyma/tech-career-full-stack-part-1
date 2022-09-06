@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <p id="title">Türkiye</p>
+
+
+    <button onclick="changeCountry()">Change Country</button>
+
+    <button onclick="changeColor()"></button>
+</div>
+    <span>Hello</span>
+    <span>Hello-2</span>
+    <span>Hello-3</span>
+
+    <p>Lorem ipsum dolor sit, 
+        amet consectetur adipisicing elit.
+         Minus magni cupiditate adipisci quia illo, 
+         qui suscipit obcaecati. Explicabo ut voluptate sequi ea. 
+         Hic nostrum numquam, quia rem totam beatae impedit!</p>
+    
+</body>
+
+
+
+<script>
+    var span = document.getElementsByTagName("span");
+
+    var countryP = document.getElementById('title');
+    function changeCountry() {
+        var countryP = document.getElementById('title');
+
+        countryP.innerHTML = "Turkey";
+
+        countryP.innerText = "Turkey";
+        
+    }
+
+    function changeColor() {
+
+        var countryP = document.getElementById('tomato');
+
+        
+        
+    }
+
+</script>
+</html>
