@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <label>Name: </label>
+            <input type="text" id="name" />
+        </div>
+
+        <div>
+            <label>Unit Price: </label>
+            <input type="text" id="unitprice" />
+        </div>
+
+
+        <div>
+            <label>Stock: </label>
+            <input type="text" id="stock" />
+        </div>
+
+        <div>
+            <button onclick="addProduct()">Add</button>
+        </div>
+
+    </div>
+
+</body>
+<script>
+
+    function addProduct() {
+
+        var newProduct = {
+            name: document.getElementById('name').value,
+            unitPrice: document.getElementById('unitprice').value,
+            stock: document.getElementById('stock').value
+        }
+
+        fetch("https://northwind.vercel.app/api/products", {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newProduct)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log('new product', data);
+        })
+
+
+
+    }
+
+</script>
+
+</html>

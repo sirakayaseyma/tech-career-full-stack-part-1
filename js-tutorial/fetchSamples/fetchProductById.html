@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <label>Id:</label>
+        <input type="text" id="productId" />
+    </div>
+    <div>
+        <button onclick="getProduct()">Get Product By Id</button>
+    </div>
+
+    <div>
+        <div>
+            <label>Id:</label>
+            <span id="pId"></span>
+        </div>
+
+        <div>
+            <label>Name:</label>
+            <span id="name"></span>
+        </div>
+
+        <div>
+            <label>Price:</label>
+            <span id="price"></span>
+        </div>
+
+        <div>
+            <label>Stock:</label>
+            <span id="stock"></span>
+        </div>
+
+    </div>
+
+</body>
+<script>
+
+    function getProduct() {
+        var productId = document.getElementById('productId').value;
+
+        if (!isNaN(productId) && productId) {
+
+            fetch(`https://northwind.vercel.app/api/products/${productId}`)
+                .then(res => {
+                    if(res.status == 200){
+                        return res.json();
+                    }
+                    else if(res.status == 404){
+                        throw new Error('Invalid ID');
+                    }
+                })
+                .then(data => {
+                    
+                    document.getElementById('pId').innerHTML = data.id;
+                    document.getElementById('name').innerHTML = data.name;
+                    document.getElementById('price').innerHTML = data.unitPrice;
+                    document.getElementById('stock').innerHTML = data.unitsInStock;
+
+                })
+                .catch((msg) => {
+                    console.log('ERROR MESAGE', msg);
+                })
+        }
+        else {
+            alert('Lütfen uygun bir değer giriniz.')
+        }
+    }
+
+</script>
+
+</html>

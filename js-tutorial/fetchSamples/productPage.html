@@ -60,6 +60,22 @@
                     tdDelete.innerHTML = 'DELETE'
                     tdDelete.style.cursor = 'pointer'
                     tdDelete.style.color = 'tomato';
+                    tdDelete.id = element.id;
+
+                    tdDelete.addEventListener('click', function(e){
+
+                        let deleteID = e.target.id;
+
+                        fetch("https://northwind.vercel.app/api/products/" + deleteId, {
+                            method: 'DELETE'
+                        })
+                        .then(res => {
+                            if(res.status == 200){
+                                console.log('Silme işlemi başarılı');
+                            }
+                        })
+
+                    })
 
 
                     trElement.appendChild(tdId);
