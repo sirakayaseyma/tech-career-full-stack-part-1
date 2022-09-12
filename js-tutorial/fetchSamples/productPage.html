@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button onclick="getProducts()">Get Products</button>
+    </div>
+    <div style="display: flex">
+        <h1>Product Count: </h1><h1 id="productsCount"></h1>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Unit Price</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+
+
+    </table>
+
+</body>
+<script>
+
+    function getProducts() {
+
+        document.querySelector('tbody').innerHTML = "";
+
+
+        fetch("https://northwind.vercel.app/api/products")
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('productsCount').innerHTML = data.length
+                data.forEach(element => {
+
+                    var trElement = document.createElement('tr');
+
+                    var tdId = document.createElement('td');
+                    tdId.innerText = element.id;
+
+                    var tdName = document.createElement('td');
+                    tdName.innerText = element.name;
+
+                    var tdUnitPrice = document.createElement('td');
+                    tdUnitPrice.innerText = element.unitPrice;
+
+                    var tdDelete = document.createElement('td');
+                    tdDelete.innerHTML = 'DELETE'
+                    tdDelete.style.cursor = 'pointer'
+                    tdDelete.style.color = 'tomato';
+
+
+                    trElement.appendChild(tdId);
+                    trElement.appendChild(tdName);
+                    trElement.appendChild(tdUnitPrice);
+                    trElement.appendChild(tdDelete);
+
+               
+
+                    document.getElementsByTagName('tbody')[0].appendChild(trElement);
+
+
+                });
+
+            })
+
+ 
+    }
+
+</script>
+
+</html>

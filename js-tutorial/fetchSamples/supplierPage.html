@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button onclick="getSuppliers()">Get Suppliers</button>
+    </div>
+    <div style="display: flex">
+        <h1>Supplier Count: </h1><h1 id="supplierCount"></h1>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Company Name</th>
+                <th>Contact Name</th>
+                <th>Contact Title</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+
+
+    </table>
+
+</body>
+<script>
+
+    function getSuppliers() {
+
+        document.querySelector('tbody').innerHTML = "";
+
+
+        fetch("https://northwind.vercel.app/api/suppliers")
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('supplierCount').innerHTML = data.length
+                data.forEach(element => {
+
+                    var trElement = document.createElement('tr');
+
+                    var tdId = document.createElement('td');
+                    tdId.innerText = element.id;
+
+                    var tdCompanyName = document.createElement('td');
+                    tdCompanyName.innerText = element.companyName;
+
+                    var tdContactName = document.createElement('td');
+                    tdContactName.innerText = element.contactName;
+
+                    var tdContactTitle = document.createElement('td');
+                    tdContactTitle.innerText = element.contactTitle;
+
+                    trElement.appendChild(tdId);
+                    trElement.appendChild(tdCompanyName);
+                    trElement.appendChild(tdContactName);
+                    trElement.appendChild(tdContactTitle);
+
+                    document.getElementsByTagName('tbody')[0].appendChild(trElement);
+
+
+                });
+
+            })
+
+ 
+    }
+
+</script>
+
+</html>
