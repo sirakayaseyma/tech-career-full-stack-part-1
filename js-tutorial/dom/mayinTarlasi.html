@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex; flex-direction:row;">
+        <h4>User Point: <h4></h4> </h4>
+    </div>
+    <div>
+        <label>Mayın Satır Sayısı</label>
+        <input type="text" id="bombCount" />
+        <button onclick="start()">Start</button>
+    </div>
+    <div id="content">
+
+    </div>
+</body>
+<script>
+    //Ekrandaki inputa girdiği sayı doğrultusunda buton koyacağız. 
+    //Aynı zamanda girilen inputtaki değer kadar mayın koyacağız.
+    // Örneğin kullanıcı 5 girdiyse 5 mayın koyulacak. 1-25 arasında rastgele 5 sayı belirlenip bir diziye atayabiliriz.
+
+    const content = document.getElementById('content'); 
+    let userPoint = 0;
+
+    let bombs = [];
+
+    const start = () => {
+        userPoint = 0;
+
+        
+        content.innerHTML = "";
+
+        var buttonCount = Number(document.getElementById('bombCount').value);
+
+        var totalButton = Number(buttonCount) * Number(buttonCount);
+
+        //mayınları oluşturuyorum.
+
+
+
+        while(bombs.length != buttonCount){
+
+            let randomBomb = Math.ceil(Math.random() * totalButton)
+
+            if(!bombs.includes(randomBomb)){
+                bombs.push(randomBomb);
+            }
+        }
+
+
+        let btnLeft = 10;
+        let btnTop = 80;
+        for(let i = 1; i <= totalButton; i++){
+
+            if(i % buttonCount == 1 && i != 1){
+                btnLeft = 10;
+                btnTop = btnTop + 120;
+            }
+
+            var btn = document.createElement('button');
+            btn.style.width = "15px";
+            btn.style.height = "15px";
+            btn.style.position = "absolute";
+            btn.style.left = btnLeft + "px";
+            btn.style.top = btnTop + "px";
+            btn.id = i;
+
+         
+            btn.addEventListener("click", function(e){
+
+                   //butona tıklandığında mayın VARSA  yani bu id numarası bomba dizisinde var ise
+                   let btnId = Number(e.target.id);
+
+                   if(bombs.includes(btnId)){
+                        //içerisinde bomba olan tüm mayınları göster ve oyunu BİTİR!
+                    
+                        var mines = document.querySelectorAll('#content button');
+
+                        mines.forEach(item => {
+
+                            if(bombs.includes(Number(item.id))){
+                                item.style.backgroundColor = 'red';
+                            }
+                            else{
+                                item.style.backgroundColor = 'blue';
+
+                            }
+                            
+                        })
+
+                    }
+                   else{
+                    userPoint = userPoint + 10;
+                       e.target.style.backgroundColor = 'blue';
+                   }
+
+            })
+
+            content.appendChild(btn);
+            btnLeft = btnLeft + 120;  
+
+        }
+
+
+    }
+
+</script>
+</html>
