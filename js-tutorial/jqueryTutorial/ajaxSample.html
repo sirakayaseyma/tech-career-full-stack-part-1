@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div>
+        <div>
+            <label>Name:</label>
+            <input type="text" id="name" />
+        </div>
+        <div>
+            <label>Description:</label>
+            <input type="text" id="description" />
+        </div>
+        <div>
+            <button>Add</button>
+        </div>
+    </div>
+
+</body>
+<script>
+    $("button")
+        .click(function () {
+
+            let name = $("#name").val();
+            let description = $("#description").val();
+
+            let newCategory = {
+                name: name,
+                description : description
+            }
+
+
+            $.ajax({
+                url:'https://northwind.vercel.app/api/categories',
+                method:'POST',
+                data: newCategory,
+                success: function(res){
+                    console.log(res);
+                }
+
+            })
+
+        })
+</script>
+
+</html>
