@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div>
+        <button id="test">Test</button>
+        <button id="btn">test-2</button>
+        <button class="deneme">test-3</button>
+    </div>
+ 
+
+    <p>Çalışma Projesi</p>
+    <!-- <div class="idim">
+        <button>İdli Buton</button>
+    </div> -->
+
+    <!-- <div>
+        <button>Div Butonu</button>
+    </div> -->
+</body>
+</html>
+<script>
+$("div button:first").click(function() {
+    $(this).hide();
+})
+    // $(".idim button").click(function () {
+    //     alert("Div idli buton");
+    // })
+
+
+
+    // $("div button").click(function() {
+    //     alert("Div Butonu")
+    // })
+    // $("button").click(function () {
+    //     alert("Birinci Buton");
+    //     //document.getElementById('test').style.color = 'pink';
+    // })
+
+    // $('#btn').click(function () {
+    //     alert("ikinci buton");
+    // })
+
+    // $('.deneme').click(function () {
+    //     alert("Üçüncü buton");
+    // })
+</script>

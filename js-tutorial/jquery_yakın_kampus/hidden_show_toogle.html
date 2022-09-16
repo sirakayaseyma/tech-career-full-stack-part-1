@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <style>
+        p{
+            background-color: plum;
+        }
+    </style>
+</head>
+<body>
+    <button>Gizle</button>
+    <button id="tgl">Gizle - Göster</button>
+    <button id="gstr">Göster</button>
+    <div>
+        <p>Güzel konu</p>
+        <p>Gizleme metni</p>
+        <p>Gizleme metni -2</p>
+    </div>
+
+    <div style="display:none ;" id="gizli"><p>Satır-2</p></div>
+   
+    
+</body>
+</html>
+<script>
+    $("#gstr").click( 
+        function() {
+            $("#gizli").show(1000);
+        }
+
+    )
+</script>
