@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    async function getUser(){
+        return {
+            name:'Çağatay',
+            surname: 'Yıldız'
+        }
+    }
+
+    async function getOrder(){
+        return {
+            orderId: 554,
+        }
+    }
+
+    async function getEmployee(){
+        return "Ayça Yılmaz";
+    }
+
+
+    //Üçünün yüklenmesinden nasıl haberim olur?
+    Promise.all([getUser(), getOrder(), getEmployee()])
+    .then((res) => {
+        console.log('RES',res);
+    })
+
+
+</script>
+</html>
